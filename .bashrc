@@ -118,7 +118,7 @@ if ! shopt -oq posix; then
 fi
 
 # GitHub Copilot CLI
-eval "$(github-copilot-cli alias -- "$0")"
+# eval "$(github-copilot-cli alias -- "$0")"
 
 #Starship - using array-based PROMPT_COMMAND to coexist with VTE
 # Convert PROMPT_COMMAND to array if it isn't already
