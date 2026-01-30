@@ -1,0 +1,33 @@
+
+# Settings icon - click to open GNOME Control Center
+[settings]
+command=~/.config/i3blocks/scripts/settings.sh
+interval=once
+markup=pango
+signal=10
+
+# Separator
+[separator]
+full_text=|
+align=center
+separator=false
+separator_block_width=10
+
+
+# Battery
+[battery2]
+command=~/.config/i3blocks/scripts/battery2
+markup=pango
+interval=30
+
+# Separator
+[separator]
+full_text=|
+align=center
+separator=false
+separator_block_width=10
+
+# Date and Time
+[time]
+command=date '+%m-%d-%y %I:%M %p'
+interval=60
