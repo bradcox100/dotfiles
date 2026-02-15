@@ -135,6 +135,20 @@ fi
 eval "$(starship init bash)"
 export EDITOR=vim
 
+# Yazi shell wrapper - cd to yazi's location on exit
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
+# This alias is used to openk yazi file manager. Which makes possible to quit yazi
+# and open the terminal to the location that yazi was at.
+alias yazi='y'
+
 fastfetch
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
