@@ -1,1 +1,1 @@
-echo ".dotfiles" >> .gitignore
+echo "dotfiles" >> .gitignore
