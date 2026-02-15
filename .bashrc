@@ -133,4 +133,8 @@ if [[ ! " ${PROMPT_COMMAND[@]} " =~ " starship_precmd " ]]; then
 fi
 
 eval "$(starship init bash)"
+export EDITOR=vim
+
 fastfetch
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

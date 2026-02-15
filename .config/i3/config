@@ -17,7 +17,7 @@ font pango:MesloLGMNerdFont-Bold.ttf 14
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:Hack Nerd Font 12
+font pango:Hack Nerd Font 14
 
 
 # 12.23.25 Start NetworkManager service if not already running
@@ -26,6 +26,7 @@ exec --no-startup-id systemctl start NetworkManager.service
 # 12.23.25 Start the applet for system tray (optional)
 exec --no-startup-id nm-applet
 
+exec --no-startup-id picom
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -122,18 +123,15 @@ bindsym $mod+a focus parent
 
 # -----------------------------------------------------------
 # Assign to workspace
-assign [class="google-chrome"] $ws1
-assign [class="kitty"] $ws2
+assign [class="kitty"] $ws1
+assign [class="google-chrome"] $ws2
 
-# Start On Login
-exec --no-startup-id google-chrome-stable
-exec --no-startup-id kitty
 # -----------------------------------------------------------
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1 Chrome"
-set $ws2 "2 Terminal"
+set $ws1 "1 Terminal"
+set $ws2 "2 Chrome"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -142,6 +140,11 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+# Start On Login
+exec --no-startup-id kitty
+exec --no-startup-id google-chrome-stable
+#
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -210,7 +213,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3blocks
+        status_command SCRIPT_DIR=~/.config/i3blocks/scripts i3blocks
 	position top
 	
 }
