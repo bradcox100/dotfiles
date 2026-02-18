@@ -145,7 +145,7 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-# This alias is used to openk yazi file manager. Which makes possible to quit yazi
+# This alias is used to open yazi file manager. Which makes possible to quit yazi
 # and open the terminal to the location that yazi was at.
 alias yazi='y'
 
