@@ -28,5 +28,6 @@ config checkout
 
 Set the flag showUntrackedFiles to no on this specific (local) repository:
 config config --local status.showUntrackedFiles no
+
 ---------------------------------------------------------------------------------------------------
 
