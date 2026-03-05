@@ -30,12 +30,9 @@ separator_block_width=15
 markup=none
 
 # Battery indicator
-#
-# The battery instance defaults to 0.
 [battery2]
 command=$SCRIPT_DIR/battery2/battery2
-#label=BAT
-#label=⚡
+markup=pango
 interval=30
 
 # Volume indicator
@@ -44,13 +41,11 @@ interval=30
 # The second parameter overrides the mixer selection
 # See the script for details.
 
-[volume]
-label=♪
-command=$SCRIPT_DIR/volume/volume
-#label=VOL
-interval=once
-signal=10
-#STEP=5%
+[volume-pipewire]
+command=$SCRIPT_DIR/volume-pipewire/volume-pipewire -F '${SYMB} ${VOL}%'
+interval=persist
+SUBSCRIBE=1
+USE_ALSA_NAME=1
 
 # Memory usage
 #

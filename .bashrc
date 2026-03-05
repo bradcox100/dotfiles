@@ -118,9 +118,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# GitHub Copilot CLI
-# eval "$(github-copilot-cli alias -- "$0")"
-
 #Starship - using array-based PROMPT_COMMAND to coexist with VTE
 # Convert PROMPT_COMMAND to array if it isn't already
 if [[ ! "$(declare -p PROMPT_COMMAND 2>&1)" =~ "declare -a" ]]; then
